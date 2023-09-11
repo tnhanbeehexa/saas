@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>Đây là header</header>
+    <div class="content">
+        <button class="popup-btn">click to show popup</button>
+        <div style="display: none;" class="popup-el">alo Popup đây</div>
+        <div>
+            <a href="./cart.html">Cart</a>
+        </div>
+    </div>
+    <footer>Đây là footer</footer>
+
+    <script type="module" src="./src/core/core.js"></script>
+    <script type="module">
+        import Popup from './src/core/core.js'
+        const config = {
+            color: "#ccc",
+            popupBtn: ".popup-btn",
+            showPopupAfter: 3000,
+            closePopupAfter: 3000,
+        }
+        const popup = new Popup(".popup-el", config)
+        popup.showAfter();
+        popup.closeAfter();
+        popup.clickShowPopup();
+        
+    </script>
+</body>
+</html>
