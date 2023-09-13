@@ -7,30 +7,46 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>Đây là header</header>
+    <header>Header</header>
     <div class="content">
-        <button class="popup-btn">click to show popup</button>
-        <div style="display: none;" class="popup-el">alo Popup đây</div>
+        <button class="popup-btn">Click</button>
+        <div class="popup"><p>Popup nèeeeeeee</p></div>
         <div>
             <a href="./cart.html">Cart</a>
         </div>
     </div>
-    <footer>Đây là footer</footer>
+    <footer>Footer</footer>
 
     <script type="module" src="./src/core/core.js"></script>
     <script type="module">
         import Popup from './src/core/core.js'
         const config = {
-            color: "#ccc",
-            popupBtn: ".popup-btn",
-            showPopupAfter: 3000,
-            closePopupAfter: 3000,
+            setColor: "#ccc",
+            setPosition: {
+                x: 'center',
+                y: 'middle',
+            },
+            setOverlay: {
+                enable: false,
+            },
+            isDisable: {
+                disable: false,
+            },
+            trigger: {
+                // scrollPage: {
+                //     enable: true,
+                //     height: 50,
+                // },
+                clickShowPopup: {
+                    popupBtn: '.popup-btn',
+                },
+                closeAfter: {
+                    enable: true,
+                    times: 2000,
+                }
+            }
         }
-        const popup = new Popup(".popup-el", config)
-        popup.showAfter();
-        popup.closeAfter();
-        popup.clickShowPopup();
-        
+        const popup = new Popup(".popup", config)
     </script>
 </body>
 </html>

@@ -1,30 +1,90 @@
+import setPosition from '../modules/position.js';
+import setOverlay from '../modules/overlay.js';
+
 class Popup {
-    constructor(slector, config) {
+    constructor(slector, userconfig) {
         this.slector = slector;
-        this.config = config;
+        this.config = userconfig;
+        const trigger = this.config.trigger;
+        this.trigger = trigger;
+        this.height
+        this.registerables();
     }
-    setBackground = () => {
-        const elementPopup = document.querySelector(this.slector);
-        elementPopup.style.color = this.config.color;
+    registerables = () => {
+        const userCustomize = Object.keys(this.trigger ? this.trigger:'');
+        const generalCustomize = Object.keys(this.config ? this.config:'');
+        generalCustomize.forEach((callback) => {
+            if (callback !== 'trigger')
+                this.generalPopup()[callback]();
+        })
+        userCustomize.forEach((callback) => {
+            this.triggerPopup()[callback]();
+        })
     }
-    clickShowPopup = () => {
-        document.querySelector(this.config.popupBtn).onclick=() => {
-            document.querySelector(this.slector).style.display = 'block';
+    generalPopup = () => {
+        return {
+            setPosition: () => setPosition(this.config.setPosition.x, this.config.setPosition.y, this.slector),
+            setOverlay: () => {setOverlay},
+            setColor: () => {
+                document.querySelector(this.slector).style.color = this.config.setColor;
+            },
+            isDisable: () => {
+                if (this.config.disable == false)
+                    document.querySelector(this.slector).classList.add("hint");
+            },
+            setBackground: () => {
+                const elementPopup = document.querySelector(this.slector);
+                elementPopup.style.color = this.config.color;
+            }
         }
     }
-    showAfter = () => {
-        window.onload =() => {
-            setTimeout(() => {
-                document.querySelector(this.slector).style.display = 'block';
-            }, this.config.showPopupAfter)
+    triggerPopup = () => {
+        return {
+            clickShowPopup: () => {
+                document.querySelector(this.trigger.clickShowPopup.popupBtn).onclick = () => {
+                    document.querySelector(this.slector).style.display = 'block';
+                    setOverlay(this.config.setOverlay.enable);
+                    this.triggerPopup
+                }
+            },
+            showAfter: () => {
+                if (this.trigger.showAfter.enable === true) {
+                    window.onload = () => {
+                        setTimeout(() => {
+                            document.querySelector(this.slector).style.display = 'block';
+                            setOverlay(this.config.setOverlay.enable);
+                        }, this.trigger.showAfter.times);
+                    }
+                }
+            },
+            scrollPage: () => {
+                let height = this.trigger.scrollPage.height;
+                let el =  this.slector;
+                if (this.trigger.scrollPage.enable === true) {
+                    window.onscroll = () => {
+                        activeScollPage();
+                    }
+                    function activeScollPage() {
+                        if (window.scrollY > height) {
+                            document.querySelector(el).style.display = 'block';
+                            setOverlay(this.config.setOverlay.enable);
+                        }
+                    }
+                }
+            },
+            closeAfter: () => {
+                if (this.trigger.closeAfter.enable === true) {
+                    setTimeout(() => {
+                        document.querySelector(this.slector).style.display = 'none';
+                        setOverlay(false);
+                    }, this.trigger.closeAfter.times)
+                }
+            }
         }
     }
-    closeAfter = () => {
-        if(this.config.closePopupAfter) {
-            setTimeout(() => {
-                document.querySelector(this.slector).style.display = 'none';
-            }, this.config.closePopupAfter+this.config.showPopupAfter)
-        }
+    
+    optionsPopup = () => {
+        
     }
 };
 
