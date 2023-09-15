@@ -5,10 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ExamPopup</title>
         <link rel="stylesheet" href="./ExamPopup.css">
+        <link rel="stylesheet" href="../core/core.css">
     </head>
-    <body class="my-popup">
+    <body class="my-popup" style="height: 150vh;overflow-y: scroll;">
         <div id="root">
-            <div class="form-popup popup" id="myForm">
+            <div class="form-popup popup hint" id="myForm">
                 <form action="/action_page.php" class="form-container">
                     <h1>Login</h1>
                     <label for="email"><b>Email</b></label>
@@ -24,6 +25,8 @@
         <script type="module">
             import Popup from '../core/core.js'
             const config = {
+                height: 393,
+                width: 294,
                 condition: {
                     existClass: {
                         enable: true,
@@ -35,10 +38,19 @@
                         enable: true,
                         className: '.form-popup',
                         x: 'center',
-                        y: 'left'
+                        y: 'top'
                     },
                     setOverlay: {
-                        enable: true
+                        enable: true,
+                        className: '.form-popup',
+                        backgroundColor: 'black',
+                        opacity: 0.4,
+                    }
+                },
+                trigger: {
+                    scrollPage: {
+                        enable: true,
+                        height: 150,
                     }
                 }
             }

@@ -1,12 +1,13 @@
-function showOncePageScroll (trigger, selector) {
-    if (trigger.scrollPage.enable === true) {
+function showOncePageScroll (config, selector) {
+    console.log("Ko chay")
+    if (config.trigger.scrollPage.enable === true) {
         window.onscroll = () => {
             console.log(window.scrollY);
             activeScollPage();
         }
         function activeScollPage() {
-            if (window.scrollY > trigger.scrollPage.height) {
-                document.querySelector(selector).style.display = 'block';
+            if (window.scrollY > config.trigger.scrollPage.height) {
+                document.querySelector(selector).classList.remove('hint');
             }
         }
     }
