@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ExamPopup</title>
+        <link rel="stylesheet" href="./ExamPopup.css">
+    </head>
+    <body class="my-popup">
+        <div id="root">
+            <div class="form-popup popup" id="myForm">
+                <form action="/action_page.php" class="form-container">
+                    <h1>Login</h1>
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <button type="submit" class="btn">Login</button>
+                    <button type="button" class="btn cancel">Close</button>
+                </form>
+            </div>
+        </div>
+        <script type="module" src="../core/core.js"></script>
+        <script type="module">
+            import Popup from '../core/core.js'
+            const config = {
+                condition: {
+                    existClass: {
+                        enable: true,
+                        className: 'my-popup'
+                    }
+                },
+                design: {
+                    setPosition: {
+                        enable: true,
+                        className: '.form-popup',
+                        x: 'center',
+                        y: 'left'
+                    },
+                    setOverlay: {
+                        enable: true
+                    }
+                }
+            }
+            const popup = new Popup('.popup', config);
+        </script>
+    </body>
+</html>
