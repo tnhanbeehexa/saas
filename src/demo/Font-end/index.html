@@ -13,14 +13,14 @@
 </head>
 <body>
     <div id="root">
-        <div class="content-config">
+        <div class="container">
             <header class="header">
                 <div class="row">
                     <nav class="header-navbar-left">
-                        <a href="#"><img src="./assets/image/logo-beehexa.png" alt="Logo" class="header-logo"></a>
+                        <a href="./index.html"><img src="./assets/image/logo-beehexa.png" alt="Logo" class="header-logo"></a>
                         <div class="header-navbar-option">
-                            <a href="./design.html" class="header-navbar-option-title">Design Layout</a>
-                            <a href="./config.html" class="header-navbar-option-title">Config Popup</a>
+                            <a onclick="renderPage('design.html')" class="header-navbar-option-title">Design Layout</a>
+                            <a onclick="renderPage('config.html')" class="header-navbar-option-title">Config Popup</a>
                         </div>
                     </nav>
                     <nav class="header-navbar-right">
@@ -38,7 +38,7 @@
                     </nav>
                 </div>
             </header>
-            <div class="body">
+            <div class="content">
 
             </div>
             <footer class="footer">
@@ -47,4 +47,5 @@
         </div>
     </div>
 </body>
+<script src="./index.js"></script>
 </html>
