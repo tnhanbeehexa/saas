@@ -1,7 +1,4 @@
-:root {
-    --x: 350px;
-    --y: 250px;
-}
+
 
 body {
     margin: 0;
@@ -33,6 +30,7 @@ header {
 
 .popup {
     z-index: 2;
+    display: none;
 }
 
 .popup p {
@@ -46,7 +44,7 @@ header {
 
 .popup.middle {
     position: fixed;
-    top: calc(50% - var(--y) / 2);
+    top: calc(50% - 100px / 2);
 }
 
 .popup.bottom {
@@ -61,7 +59,7 @@ header {
 
 .popup.center {
     position: fixed;
-    left: calc(50% - var(--x) / 2);
+    left: calc(50% - 320px / 2);
 }
 
 .popup.right {
@@ -75,7 +73,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    /* background-color: rgba(0, 0, 0, 0.4); */
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 footer {

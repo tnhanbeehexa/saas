@@ -6,9 +6,9 @@ import existCookie from '../module/conditions/existCookie.js';
 import setOverlay from '../module/designs/overlay.js';
 import setPosition from '../module/designs/position.js';
 // import triggers
-import closeAfterXSeconds from '../module/triggers/closeAfterXSeconds.js';
-import showAfterXSeconds from '../module/triggers/showAfterXSeconds.js';
-import showOncePageScroll from '../module/triggers/showOncePageScroll.js';
+import closeAfter from '../module/triggers/closeAfterXSeconds.js';
+import showAfter from '../module/triggers/showAfterXSeconds.js';
+import scrollPage from '../module/triggers/showOncePageScroll.js';
 
 export default {
     clickButton,
@@ -16,8 +16,8 @@ export default {
     existCookie,
     setOverlay,
     setPosition,
-    closeAfterXSeconds,
-    showAfterXSeconds,
-    showOncePageScroll
+    closeAfter,
+    showAfter,
+    scrollPage
 };
 
