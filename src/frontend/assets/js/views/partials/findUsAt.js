@@ -5,7 +5,7 @@ import render from "../../render.js";
 const findUsAt = () => {
     return render`
         <div class="container-findUsAs d-flex justify-content-between">
-            <div class="container-findUsAs__left d-flex flex-row align-items-center justify-content-center container-fluid">
+            <div class="container-findUsAs__left d-flex flex-row align-items-center justify-content-start container-fluid">
                 <div class="Info-findUs">
                     <div class="Info-findUs__title">
                         <h2>Find us at</h2>
