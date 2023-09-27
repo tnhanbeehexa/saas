@@ -1,40 +1,50 @@
 <div class="row">
-                    <div class="row-direction">
-                        <div class="control">
-                            <p class="popup-name">Tên Popup</p>
-                            <div class="popup-submit">
-                                <button class="save-config-btn button">Save Config</button>
-                                <button class="reset-config-btn button">Reset Config</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="config">
-                            <div class="config-left">
-                                <h2 class="config-title">Popup config
-                                    <hr>
-                                    <ul class="config-menu">
-                                        <li class="config-menu-item">Condition</li>
-                                        <li class="config-menu-item">Design</li>
-                                        <li class="config-menu-item">Triggers</li>
-                                    </ul>
-                                </h2>
-                            </div>
-                            <div class="config-right">
-                                <div class="config-target">Condition</div>
-<hr>
-<div class="config-exist">
-    <div class="config-exist-title">Exist Class</div>
-    <input type="checkbox">
-</div>
-<div class="config-exist">
-    <div class="config-exist-title">Exist Cookies</div>
-    <input type="checkbox">
-</div>
-<div class="config-exist">
-    <div class="config-exist-title">Click Button</div>
-    <input type="checkbox">
-</div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="row-direction">
+        <div class="control">
+            <p class="popup-name">Tên Popup</p>
+            <div class="popup-submit">
+                <button class="save-config-btn button">Save Config</button>
+                <button class="reset-config-btn button">Reset Config</button>
+            </div>
+        </div>
+        <hr>
+        <div class="config">
+            <div class="config-left">
+                <h2 class="config-title">
+                    Popup config
+                    <hr>
+                    <ul class="config-menu">
+                        <li class="config-menu-item active">Condition</li>
+                        <li class="config-menu-item">Design</li>
+                        <li class="config-menu-item">Triggers</li>
+                    </ul>
+                </h2>
+            </div>
+            <div class="config-right">
+                <div class="config-target">Condition</div>
+                <hr>
+                <div class="config-item-wrapper">
+                    <label for="exists-cookie" class="config-item-title">Show if exists cookie value</label>
+                    <label class="switch">
+                        <input type="checkbox" name="exists-cookie">
+                        <span class="slider round"></span>
+                    </label>
                 </div>
+                <div class="config-item-wrapper">
+                    <label for="body-class" class="config-item-title">Show with body class</label>
+                    <label class="switch">
+                        <input type="checkbox" name="body-class">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="config-item-wrapper">
+                    <label for="click-button" class="config-item-title">Show when customer click to a button</label>
+                    <label class="switch">
+                        <input type="checkbox" name="click-button">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
