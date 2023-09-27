@@ -1,10 +1,11 @@
-function showAfter(trigger, selector) {
+'use strict';
 
-    if (trigger.showAfter.enable === true) {
+const showAfter = (condition) => {
+    if (condition.trigger.showAfter.enable === true) {
         window.onload = () => {
             setTimeout(() => {
-                document.querySelector(selector).style.display = 'block';
-            }, trigger.showAfter.seconds);
+                document.querySelector(condition.selector).style.display = 'block';
+            }, condition.trigger.showAfter.seconds);
         }
     }
 }

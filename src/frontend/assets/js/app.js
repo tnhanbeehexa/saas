@@ -5,7 +5,6 @@ import header from "./views/partials/header.js";
 import slider from "./views/partials/slider.js";
 import footer from "./views/partials/footer.js";
 import formContact from "./views/partials/formContact.js";
-
 const elementRoot = document.getElementById('root');
 
 const app = () => {
@@ -29,5 +28,4 @@ const btnRight = document.querySelector('.btn-right');
 btnRight.addEventListener('click', () => {
     carousel.scrollLeft += 1296/3;
 })
-
 export default app;

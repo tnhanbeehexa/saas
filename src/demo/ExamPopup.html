@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ExamPopup</title>
-        <link rel="stylesheet" href="./ExamPopup.css">
-        <link rel="stylesheet" href="../core/core.css">
-    </head>
-    <body class="my-popup" style="height: 150vh;overflow-y: scroll;">
-        <div id="root">
-            <div class="form-popup popup hint" id="myForm">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamPopup</title>
+    <link rel="stylesheet" href="./ExamPopup.css">
+    <link rel="stylesheet" href="../core/core.css">
+</head>
+
+<body class="my-popup">
+    <div id="root">
+        <div></div>
+        <div class="test">
+            <div class="form-popup popup" id="myForm">
                 <form action="/action_page.php" class="form-container">
                     <h1>Login</h1>
                     <label for="email"><b>Email</b></label>
@@ -21,40 +25,47 @@
                 </form>
             </div>
         </div>
-        <script type="module" src="../core/core.js"></script>
-        <script type="module">
-            import Popup from '../core/core.js'
-            const config = {
-                height: 393,
-                width: 294,
-                condition: {
-                    existClass: {
-                        enable: true,
-                        className: 'my-popup'
-                    }
+        <div class="form-popup-2 popup">
+            Test form 2
+        </div>
+    </div>
+    <script type="module" src="../core/core.js"></script>
+    <script type="module">
+        import Popup from '../core/core.js';
+        const config = {
+            selector: '.popup',
+            // design: {
+            //     setPosition: {
+            //         Test: 'position'
+            //     }
+            // },
+            condition: {
+                existClass: {
+                    enable: true,
+                    className: 'my-popup'
                 },
-                design: {
-                    setPosition: {
-                        enable: true,
-                        className: '.form-popup',
-                        x: 'center',
-                        y: 'top'
-                    },
-                    setOverlay: {
-                        enable: true,
-                        className: '.form-popup',
-                        backgroundColor: 'black',
-                        opacity: 0.4,
-                    }
-                },
-                trigger: {
-                    scrollPage: {
-                        enable: true,
-                        height: 150,
-                    }
+                existCookie: {
+                    enable: true,
+                    cname: 'popup'
                 }
+            },
+            trigger: {
+                // scrollPage: {
+                //     enable: true,
+                //     height: 100
+                // },
+                showAfter: {
+                    enable: true,
+                    seconds: 3000,
+                },
+                // closeAfter: {
+                //     enable: true,
+                //     seconds: 2000
+                // }
             }
-            const popup = new Popup('.popup', config);
-        </script>
-    </body>
+        }
+        const popup = new Popup(config);
+    </script>
+</body>
+
 </html>
