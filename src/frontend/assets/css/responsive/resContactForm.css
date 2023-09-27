@@ -8,6 +8,11 @@
     .form-smb-contact {
         padding: 16px !important;
     }
+
+    .form-contact__title {
+        width: 100% !important;
+    }
+
     .form-contact__title, .form-box {
         width: 100% !important;
         font-size: 32px !important;
@@ -39,4 +44,9 @@
     .mobile-contact {
         display: block !important;
     }
+    .form-contact__title {
+        font-size: 26px !important;
+        padding: 0 !important;
+    }
+
 }

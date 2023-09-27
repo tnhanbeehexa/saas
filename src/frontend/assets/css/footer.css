@@ -1,0 +1,163 @@
+.footer {
+    background-color: #000000;
+    padding: 24px 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-container {
+    display: flex;
+    padding: 10px 0 80px;
+    width: 100%;
+}
+
+.footer__left {
+    align-self: flex-start;
+    margin-right: 160px;
+}
+
+.footer__left-logo {
+    width: 370px;
+
+}
+
+.footer__left-logo img {
+    width: 100%;
+}
+
+.footer__left-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__left-icon a{
+    text-decoration: none;
+    color: #D34727;
+    padding: 0 10px 8px;
+}
+
+.footer__left-contact-info {
+    color: #fff;
+    font-size: 14px;
+    font-weight: lighter;
+    
+}
+.footer__left-contact-info p {
+    margin-bottom: 4px;
+}
+
+.footer__right {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+}
+
+.footer__right-top {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 150px;
+}
+
+.footer__list-item {
+    list-style: none;
+    font-size: 14px;
+    margin-right: 40px;
+    font-weight: 100;
+    font-weight: lighter;
+}
+
+.footer__list-item li:nth-child(1) {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(0, 140, 149);
+}
+
+.footer__list-item li {
+    margin: 14px 0;
+}
+
+.footer__list-item li a {
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+.footer__right-bottom {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: lighter;
+    margin-top: 20px;
+}
+
+.footer__right-bottom a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    margin-left: 30px;
+}
+
+.footer__right-bottom a:not(:last-child)::after {
+    content: "|";
+    margin-left: 26px;
+    color: #fff; 
+}
+
+
+
+@media (max-width: 768px) { 
+    .footer-container {
+        flex-wrap: wrap;
+    }
+    .footer__right,
+    .footer__left {
+        width: 100%;
+    }
+    
+    .footer__left-logo {
+        width: 100%;
+    }
+
+    .footer__right-top {
+        width: 100%;
+    }
+
+    
+    .footer__list-item {
+        width: 100%;
+        padding: 0;
+        margin-top: 24px;
+    }
+
+    .footer__list-item li {
+        margin: 12px 0;
+    }
+
+    .footer__right-bottom {
+        width: 100%;
+    }
+
+    .footer__right-bottom a:nth-child(1) {
+        margin: 0;
+    }
+
+    .footer__right-bottom a:after {
+        display: none;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .footer__left {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+
+}
+

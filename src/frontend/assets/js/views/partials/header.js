@@ -4,29 +4,24 @@ import render from "../../render.js";
 
 const header = () => {
     return render`
-        <header class="header">
-            <div class="container-header">
-                <nav class="header-navbar-left">
-                    <a href="#"><img src="./assets/image/logo-variux.png" alt="Logo" class="header-logo"></a>
-                    <div class="header-navbar-option">
-                        <a href="./index.html" class="header-navbar-option-title">Home</a>
-                        <a href="./design.html" class="header-navbar-option-title">Design Layout</a>
-                        <a href="./config.html" class="header-navbar-option-title">Config Popup</a>
+        <header class="p-4 bg-dark text-white">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none align-items-center flex-column justify-content-center logo-brand">
+                        <img src="./assets/image/Variux+-+orange.png" class="header-logo"></img>
+                        <span class="textLogo">POPUP Banner Module</span>
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="#" class="nav-link px-2 text-secondary">About</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Guide Docs</a></li>
+                    </ul>
+
+                    <div class="text-end">
+                        <button type="button" class="btn btn-outline-light me-2">Login</button>
+                        <button type="button" class="btn btn-warning">Sign-up</button>
                     </div>
-                </nav>
-                <nav class="header-navbar-right">
-                    <img src="./assets/image/logo-variux.png" alt="user-avatar" class="user-avatar">
-                    <div class="user-name-wrapper">
-                        <h2 class="user-name">Tín Nguyễn
-                            <ul class="user-menu">
-                                <li class="user-menu-item">Profile</li>
-                                <li class="user-menu-item">Profile</li>
-                                <li class="user-menu-item">Profile</li>
-                            </ul>
-                        </h2>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </div>
-                </nav>
+                </div>
             </div>
         </header>
     `

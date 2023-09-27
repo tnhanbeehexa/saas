@@ -7,6 +7,7 @@ import header from "./views/partials/header.js";
 import footer from "./views/partials/footer.js";
 import slider from "./views/partials/slider.js";
 
+
 const elementRoot = document.getElementById('root');
 
 const app = () => {
@@ -17,7 +18,8 @@ const app = () => {
             ${formContact()}
             ${findUsAt()}
             ${footer()}
-        </div>
+        </div> 
+
     ` 
 };
 
@@ -32,4 +34,5 @@ const btnRight = document.querySelector('.btn-right');
 btnRight.addEventListener('click', () => {
     carousel.scrollLeft += 200;
 })
+
 export default app;
