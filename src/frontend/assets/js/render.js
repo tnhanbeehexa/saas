@@ -9,4 +9,3 @@ const render = ([first, ...res], ...val) => {
 };
 
 export default render;
-
