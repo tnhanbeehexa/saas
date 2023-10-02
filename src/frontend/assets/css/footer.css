@@ -38,6 +38,11 @@
     padding: 0 10px 8px;
 }
 
+.footer__left-icon a:hover {
+    transition: all 0.3s linear;
+    filter: brightness(90%);
+}
+
 .footer__left-contact-info {
     color: #fff;
     font-size: 14px;

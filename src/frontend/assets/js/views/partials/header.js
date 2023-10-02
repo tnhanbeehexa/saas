@@ -15,10 +15,11 @@ const header = () => {
                         <li><a href="#" class="nav-link px-2 text-menu-header">About</a></li>
                         <li><a href="#" class="nav-link px-2 text-menu-header">Guide Docs</a></li>
                     </ul>
-
+   
                     <div class="text-end">
-                        <button type="button" class="btn me-2 btn-header">Sign in</button>
+                        <button type="button" class="btn me-2 btn-header" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Sign in</button>
                     </div>
+                    
                 </div>
             </div>
         </header>

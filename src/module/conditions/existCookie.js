@@ -22,6 +22,7 @@ const existCookie = (config) => {
             }
             return true;
         }
+        console.log("CHekc co: "+ checkCookie());
         return checkCookie();
     }
     return false;

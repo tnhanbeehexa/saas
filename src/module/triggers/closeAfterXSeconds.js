@@ -7,7 +7,7 @@ const closeAfter = (config) => {
     const seconds = config.trigger.showAfter.seconds + config.trigger.closeAfter.seconds;
     if (config.trigger.closeAfter.enable) {
         setTimeout(() => {
-            document.querySelector(condition.selector).style.display = 'none';
+            document.querySelector(config.selector).style.display = 'none';
         }, seconds);
     }
 }

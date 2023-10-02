@@ -23,11 +23,77 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/footer.css">
 </head>
-<body style="background-image: radial-gradient(circle at 0% 0%,#052b49, #008e98)">
+<body class="my-popup" style="background-image: radial-gradient(circle at 0% 0%,#052b49, #008e98)">
 
-    <div id="root"></div>
+    <div id="root">
+        
+    </div>
+    <div class="overlay" id="overlay" style="position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);">
+
+    </div>
+    <div id="popup" class="my-popup popup"  style="display: none;">
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <img src="./assets/image/css.jpg" alt="Popup Ad" width="300" height="200">
+          <p class="popup-desc">This is a popup ad. Click the button below to close.</p>
+          <button class="btn-popup" onclick="closePopup()">Close</button>
+        </div>
+    </div>
 
     <script type="module" src="assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import Popup from '../core/core.js';
+        
+        const config = {
+            selector: '.popup',
+            design: {
+                // setPosition: {
+                //     enabled: true,
+                //     className: '.popup',
+                //     x: 'left',
+                //     y: 'bottom'
+                // },
+                setOverlay: {
+                    enabled: true,
+
+                }
+            },
+            condition: {
+                existClass: {    
+                    enable: true,
+                    className: 'my-popup'
+                },
+                // existCookie: {   
+                //     enable: true,
+                //     cname: 'popup'
+                // },
+                // clickButton: {
+                //     enable: true,
+                //     NameID: 'btn-header',
+                // }
+            },
+            trigger: {
+                scrollPage: {
+                    enable: true,
+                    height: 100
+                },
+                // showAfter: {
+                //     enable: true,
+                //     seconds: 3000,
+                // },
+                // closeAfter: {
+                //     enable: true,
+                //     seconds: 2000
+                // }
+            }
+        }
+        const popup = new Popup(config);
+    </script>
 </body>
 </html>

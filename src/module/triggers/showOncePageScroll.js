@@ -1,8 +1,9 @@
 'use strict';
 
 const showOncePageScroll = (config) => {
-    console.log(config);
     if (config.trigger.scrollPage.enable === true) {
+        console.log(config);
+        console.log(config.selector);
         window.onscroll = () => {
             console.log(window.scrollY);
             activeScollPage();

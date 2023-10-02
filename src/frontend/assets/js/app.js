@@ -18,7 +18,6 @@ const app = () => {
             ${findUsAt()}
             ${footer()}
         </div> 
-
     ` 
 };
 

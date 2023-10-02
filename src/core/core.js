@@ -18,10 +18,13 @@ class Popup {
                     status = true;
             else status = false;
         }
+        console.log('Status' + status);
         methods.forEach((method) => {
             if (status === true) {
                 if (this.config[method] !== undefined) {
+                    
                     const keys = Object.getOwnPropertyNames(this.config[method] ? this.config[method] : '');
+                    console.log(keys);
                     for (const key of keys) {
                         imports[key](this.config)
                     };

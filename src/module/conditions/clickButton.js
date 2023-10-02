@@ -1,8 +1,9 @@
-const clickButton = (condition) => {
-    if (condition.clickButton.enable === true) {
-        const el = document.getElementById(condition.clickButton.NameID);
+const clickButton = (config) => {
+    if (config.condition.clickButton.enable === true) {
+        const el = document.getElementById(config.condition.clickButton.NameID);
         el.addEventListener('click', () => {
             //Trigger
+            console.log(123);
         }) 
     }
 };
