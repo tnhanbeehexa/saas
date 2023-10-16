@@ -11,8 +11,8 @@ import showAfter from '../module/triggers/showAfterXSeconds.js';
 import scrollPage from '../module/triggers/showOncePageScroll.js';
 
 export default {
-    clickButton, //trigger
-    existClass, 
+    clickButton,
+    existClass,
     existCookie,
     setOverlay,
     setPosition,

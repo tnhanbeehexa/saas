@@ -135,12 +135,53 @@
     </div>
     <script type="module">
         import Popup from '../core/core.js';
-
+        const config = {
+            selector: '.popup',
+            design: {
+                // setPosition: {
+                //     enabled: true,
+                //     className: '.popup',
+                //     x: 'left',
+                //     y: 'bottom'
+                // },
+                // setOverlay: {
+                //     enabled: false,
+                // }
+            },
+            condition: {
+                existClass: {    
+                    enable: true,
+                    className: 'my-popup'
+                },
+                // existCookie: {   
+                //     enable: true,
+                //     cname: 'popup'
+                // },
+                // clickButton: {
+                //     enable: true,
+                //     NameID: 'btn-header',
+                // }
+            },
+            trigger: {
+                // scrollPage: {
+                //     enable: true,
+                //     height: 100
+                // },
+                showAfter: {
+                    enable: true,
+                    seconds: 3000,
+                },
+                closeAfter: {
+                    enable: true,
+                    seconds: 2000
+                }
+            }
+        }
+        const popup = new Popup(config);
     </script>
     <script>
         // import Popup from '../core/core.js';
         function saveConfig() {
-            console.log("hello")
             const config = {};
             const popupStatus = document.getElementById('popup_status').value;
             const popupName = document.getElementById('popup_name').value;
@@ -154,7 +195,7 @@
             const popupPageViewAfterScroll = document.getElementById('popup_page_view_after_scroll').value;
             const popupPageViewPageView = document.getElementById('popup_page_view').value;
             
-            config.selector = 'popup';
+            config.selector = 'my-popup';
             config.enable = popupStatus === '1';
             config.name = popupName;
             config.design = {
