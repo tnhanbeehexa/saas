@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="config-popup.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="config-popup__container">
+            <div class="config-popup__container-left">
+                <div class="config__container-left__content">
+                    <h2 class="config__container-left__title">POP-UP INFORMATION</h2>
+                    <ul class="config__container-left__list">
+                        <li class="config__container-left__item" onclick="showContent('general')">
+                            <p>General</p>
+                        </li>
+                        <li class="config__container-left__item" onclick="showContent('display-rule')">
+                            <p>Display Rule</p>
+                        </li>
+                        <li class="config__container-left__item" onclick="showContent('config-design')">
+                            <p>Content and Design</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="config-popup__container-right">
+                <!-- General -->
+                <div class="config__container-right__content general">
+                    <h2 class="config__container-right__title">General Information</h2>
+                    <div class="config__container-right__form-input">
+                        <label for="popup_status">Enable</label>
+                        <select name="popup_status" id="popup_status">
+                            <option value="1" selected>Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="config__container-right__form-input">
+                        <label for="popup_name">Name</label>
+                        <input type="text" id="popup_name" name="popup_name" placeholder="Enter name Popup">
+                    </div>
+                   
+                </div>
+                <!-- Display rule -->
+                <div class="config__container-right__content display-rule">
+                    <h2 class="config__container-right__title">Display Setting</h2>
+                    <!-- Display rule -->
+                    <div class="config__container-right__form-input">
+                        <label for="popup_event_display">Display Rule</label>
+                        <select name="popup_event_display" id="popup_event_display" onchange="displayCustomRuleInput()">
+                            <option value="after_load" selected>After customer spend X seconds on page</option>
+                            <option value="after_scroll">After customer scroll page by X percent</option>
+                            <option value="page_view">After customer view X pages</option>
+                            <option value="immediately">Immediately when customer visit page</option>
+                        </select>
+                    </div>
+
+                    <div class="config__container-right__form-input display-rule_require-entry  field-after_load 1" id="customDisplayRule">
+                        <label for="popup_page_view">X equals (seconds)</label>
+                        <div class="form-group">
+                            <input type="number" id="popup_page_view_after_load" name="popup_page_view">
+                            <span>Enter a number here. Ex: 2</span>
+                        </div>
+                    </div>
+
+                    <div class="config__container-right__form-input display-rule_require-entry  field-after_scroll 2" id="customDisplayRule">
+                        <label for="popup_page_view">X equals (%)</label>
+                        <div class="form-group">
+                            <input type="number" id="popup_page_view_after_scroll" name="popup_page_view">
+                            <span>Enter a number here. Ex: 2</span>
+                        </div>
+                    </div>
+
+                    <div class="config__container-right__form-input display-rule_require-entry  field-page_view 3" id="customDisplayRule">
+                        <label for="popup_page_view">X equals</label>
+                        <div class="form-group">
+                            <input type="number" id="popup_page_view" name="popup_page_view">
+                            <span>Enter a number here. Ex: 2</span>
+                        </div>
+                    </div>
+
+                   
+                    <!-- Display Animation -->
+                    <div class="config__container-right__form-input">
+                        <label for="popup_effect_display">Display Animation</label>
+                        <select name="popup_effect_display" id="popup_effect_display">
+                            <option value="1" selected>None</option>
+                            <option value="Move from top">Move from top</option>
+                            <option value="Move from bottom">Move from bottom</option>
+                        </select>
+                    </div>
+                    <!-- Position -->
+                    <div class="config__container-right__form-input">
+                        <label for="popup_position">Position</label>
+                        <select name="popup_position" id="popup_position">
+                            <option value="Middle Center" selected>Middle Center</option>
+                            <option value="Middle Left" >Middle Left</option>
+                            <option value="Middle Right" >Middle Right</option>
+                            <option value="Top left" >Top left</option>
+                            <option value="Top Center" >Top Center</option>
+                            <option value="Top Right" >Top Right</option>
+                        </select>
+                    </div>
+                    
+                   
+                </div>
+                <!-- Config and Design -->
+                <div class="config__container-right__content config-design">
+                    <h2 class="config__container-right__title">Content and Design</h2>
+                    <div class="config__container-right__form-input">
+                        <label for="popup_template">Template</label>
+                        <select name="popup_template" id="popup_template">
+                            <option value="none" selected>None</option>
+                            <option value="Template contact form" >Template contact form</option>
+                            <option value="Template Age Vertification" >Template Age Vertification</option>
+                            <option value="Template Newsletter">Template Newsletter</option>
+                        </select>
+                    </div>
+                    
+                   
+                    <button type="button" class="btn-submit" onclick="saveConfig()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popup" class="my-popup popup"  style="display: none;">
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <img src="./assets/image/css.jpg" alt="Popup Ad" width="300" height="200">
+          <p class="popup-desc">This is a popup ad. Click the button below to close.</p>
+          <button class="btn-popup" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+    <script type="module">
+        import Popup from '../core/core.js';
+
+    </script>
+    <script>
+        // import Popup from '../core/core.js';
+        function saveConfig() {
+            console.log("hello")
+            const config = {};
+            const popupStatus = document.getElementById('popup_status').value;
+            const popupName = document.getElementById('popup_name').value;
+            const popupEventDisplay = document.getElementById('popup_event_display').value;
+            const popupPageView = document.getElementById('popup_page_view').value;
+            const popupEffectDisplay = document.getElementById('popup_effect_display').value;
+            const popupPosition = document.getElementById('popup_position').value;
+            const popupTemplate = document.getElementById('popup_template').value;
+
+            const popupPageViewAfterLoad = document.getElementById('popup_page_view_after_load').value;
+            const popupPageViewAfterScroll = document.getElementById('popup_page_view_after_scroll').value;
+            const popupPageViewPageView = document.getElementById('popup_page_view').value;
+            
+            config.selector = 'popup';
+            config.enable = popupStatus === '1';
+            config.name = popupName;
+            config.design = {
+                setPosition: {
+                    enable: !!popupPosition,
+                    position: popupPosition,
+                }
+            }
+            config.trigger = {
+                scrollPage: {
+                    enable: !!popupPageViewAfterScroll,
+                    height: popupPageViewAfterScroll,
+                },
+                showAfter: {
+                    enable: !!popupPageViewAfterLoad,
+                    seconds: popupPageViewAfterLoad + '000',
+                },
+                closeAfter: {
+                    enable: false,
+                    seconds: 2000
+                }
+            }
+            config.condition = {
+                existClass: {    
+                    enable: true,
+                    className: 'my-popup'
+                },
+                // existCookie: {   
+                //     enable: true,
+                //     cname: 'popup'
+                // },
+                // clickButton: {
+                //     enable: true,
+                //     NameID: 'btn-header',
+                // }
+            }
+            config.template = popupTemplate;
+            
+            // config.displayAnimation = popupEffectDisplay;
+            // config.position = popupPosition;
+            // const popup = new Popup(config);
+            console.log(config);
+            const popup = new Popup(config);
+        };
+        </script>
+        <script>
+        function showContent(contentType) {
+            // Hide all content divs
+            const contentDivs = document.querySelectorAll('.config__container-right__content');
+            contentDivs.forEach(div => div.style.display = 'none');
+
+            // Show the selected content div
+            const selectedDiv = document.querySelector(`.config__container-right__content.${contentType}`);
+            if (selectedDiv) {
+                selectedDiv.style.display = 'block';
+            }
+        }
+
+        function displayCustomRuleInput() {
+            // Get the selected value
+            const selectedValue = document.getElementById("popup_event_display").value;
+
+            // Hide all custom rule inputs
+            const customDisplayRules = document.querySelectorAll('.display-rule_require-entry');
+
+            // customDisplayRules.forEach(rule => rule.style.display = 'none !important');
+            customDisplayRules.forEach(rule => rule.style.display = 'none');
+            // Show the appropriate custom rule input based on the selected option
+            const customDisplayRule = document.querySelector(`.display-rule_require-entry.field-${selectedValue}`);
+            if (customDisplayRule) {
+                customDisplayRule.style.display = 'block';
+            }
+        }
+
+
+            // Set the default content to show on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show the 'general' content by default
+            showContent('general');
+
+            displayCustomRuleInput();
+            // // Hide all custom rule inputs
+            // const customDisplayRules = document.querySelectorAll('.display-rule_require-entry');
+            // console.log(customDisplayRules)
+            // customDisplayRules.forEach(rule => rule.style.display = 'none');
+        });
+    </script>
+</body>
+</html>
